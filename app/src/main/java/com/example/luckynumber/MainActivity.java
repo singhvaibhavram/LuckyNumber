@@ -24,18 +24,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lucky = findViewById(R.id.lucky);
+        name = findViewById(R.id.nameText);
 
-        lucky.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayResultActivity();
-            }
-        });
+        lucky.setOnClickListener(v -> displayResultActivity());
     }
 
     public void displayResultActivity(){
 
-        Intent intent = new Intent(this, DisplayResult.class);
+        String username = name.getText().toString();
+
+        // Explicit Intent
+        Intent intent = new Intent(getApplicationContext(), DisplayResult.class);
+
+        // Pass name to the second activity
+        intent.putExtra("name", username);
+
         startActivity(intent);
     }
 }

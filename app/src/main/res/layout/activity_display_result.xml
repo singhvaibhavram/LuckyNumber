@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Your Lucky Number is:"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="30sp"
         android:textAlignment="center"/>
 
     <TextView
